@@ -1,0 +1,25 @@
+PhotoAppDiscoveryService	[Act as server]
+=============================
+server.port=8080
+spring.application.name=discoverservice
+eureka.client.rgisterWithEureka=false 
+eureka.client.fetchRegistry=false
+eureka.client.serviceUrl.defaultZone=http://localhost:8080/eureka
+
+
+PhotoAppApiUsers
+=============================
+server.port=0
+spring.application.name=userAPI
+eureka.client.serviceUrl.defaultZone=http://localhost:8080/eureka
+
+
+Note:
+------
+1.PhotoAppDiscoveryService program run -1st
+2 PhotoAppApiUsers -Run 2nd
+
+url:	http://localhost:8080
+url: 	http://localhost:[Getport From Eureka]/users/status/check
+
+ 
