@@ -1,0 +1,28 @@
+security (new class)
+=============
+@Configuration
+@EnableWebSecurity
+
+
+extends WebSecurityConfigurerAdapter
+
+protected void configure(HttpSecurity httpsecurity) throws Exception{
+		httpsecurity.csrf().disable();
+		httpsecurity.authorizeRequests().antMatchers("/users/**").permitAll();
+	}
+
+
+Password encrypted
+==================
+(UserServiceImpl)
+---------------------
+BCryptPasswordEncoder bCryptPasswordEncoder;
+
+userdto.setEncryptedPassword(bCryptPasswordEncoder.encode(userdto.getPassword()));
+
+PhotoAppApiUserApplication
+---------------------------
+@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
