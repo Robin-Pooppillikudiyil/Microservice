@@ -59,7 +59,7 @@ Zuul -API GateWay
 	----------------------
 	server.port=8081
 	spring.application.name=zuul
-	eureka.client.serviceUrl.defaultZone=http://localhost:8081/eureka
+	eureka.client.serviceUrl.defaultZone=http://localhost:8080/eureka
 
 url:http://localhost:8080
 url:http://localhost:8081/{application Name which is running on Eureka server}/users/status/check
